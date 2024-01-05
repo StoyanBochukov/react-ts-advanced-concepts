@@ -122,3 +122,11 @@ input {
   margin: 3rem auto;
   text-align: center;
 }
+
+.card {
+  border: 1px solid red;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}

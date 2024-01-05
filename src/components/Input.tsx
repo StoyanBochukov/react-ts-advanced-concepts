@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC, ReactNode } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 
 
 type InputProps = {
