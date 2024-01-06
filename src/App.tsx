@@ -2,13 +2,20 @@ import Input from "./components/Input";
 import Button from "./components/Button";
 import Container from "./components/Container";
 import Card from "./components/Card";
-import Form from "./components/Form";
+import Form, { type FormHandleType } from "./components/Form";
 import { useRef } from "react";
 
 
 function App() {
 
   const input = useRef<HTMLInputElement>(null)
+  const customFormRef = useRef<FormHandleType>(null)
+  const handleSave = (data: unknown) => {
+    const extractedData = data as { name: string; age: string };
+    console.log(extractedData);
+    customFormRef.current?.clear()
+    
+  }
 
   return <main>
     <Input id="name" label="Your Name" type="text" ref={input} />
@@ -28,7 +35,7 @@ function App() {
         <p>Some More Demo Content</p>
       </div>
     </Card>
-    <Form>
+    <Form onSave={handleSave} ref={customFormRef}>
       <Input type="text" label="Some Demo Text" id="demo-id" />
       <Input type="text" label="More Demo Text" id="another-demo-id" />
       <p>
